@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="20dp">
+    android:paddingBottom="60dp">
 
     <ImageView
         android:layout_width="0dp"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:scaleType="fitXY"
         android:src="@drawable/bg_cover"
-        android:contentDescription="@string/avatarDesc"
+        android:contentDescription="@string/bg_cover"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,14 +21,15 @@
         android:id="@+id/circleImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="128dp"
-        android:src="@drawable/user0"
+        android:layout_marginTop="150dp"
         app:civ_border_color="#4D000000"
         app:civ_border_width="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/avatarDesc"
+        tools:src="@drawable/user0" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -43,20 +44,6 @@
         app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     <TextView
-        android:id="@+id/tv_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:drawableStart="@drawable/ic_user"
-        android:drawablePadding="3dp"
-        tools:text="naufanir"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_name"
-        app:layout_constraintStart_toStartOf="@+id/tv_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
-
-    <TextView
         android:id="@+id/tv_followers_count"
         style="@style/TextForDetailItem_Statistic.Counter"
         tools:text="122"
@@ -67,7 +54,7 @@
     <TextView
         android:id="@+id/textView1"
         style="@style/TextForDetailItem_Statistic.Desc"
-        android:text="Followers"
+        android:text="@string/desc_followers"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_followers_count" />
@@ -88,14 +75,14 @@
         tools:text="12"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
         android:id="@+id/textView2"
         style="@style/TextForDetailItem_Statistic.Desc"
-        android:text="Repositories"
-        app:layout_constraintEnd_toEndOf="@+id/tv_username"
-        app:layout_constraintStart_toStartOf="@+id/tv_username"
+        android:text="@string/desc_repositories"
+        app:layout_constraintEnd_toEndOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_repositories_count" />
 
     <View
@@ -118,7 +105,7 @@
     <TextView
         android:id="@+id/textView3"
         style="@style/TextForDetailItem_Statistic.Desc"
-        android:text="Following"
+        android:text="@string/desc_following"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/tv_following_count" />
@@ -136,8 +123,8 @@
         android:id="@+id/tv_loc"
         style="@style/TextForDetailItem_Info"
         tools:text="Bekasi, Indonesia"
-        android:layout_marginTop="25dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="15dp"
         app:drawableStartCompat="@drawable/ic_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,11 +134,22 @@
         android:id="@+id/tv_company"
         style="@style/TextForDetailItem_Info"
         tools:text="BANGKIT Cohort 2022 on Mobile Android Developer"
-        android:layout_marginTop="15dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="15dp"
         app:drawableStartCompat="@drawable/ic_company"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_loc" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

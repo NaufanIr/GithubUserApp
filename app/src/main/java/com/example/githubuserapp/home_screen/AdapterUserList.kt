@@ -1,13 +1,14 @@
-package com.example.githubuserapp
+package com.example.githubuserapp.home_screen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.githubuserapp.data.UsersData
 import com.example.githubuserapp.databinding.ItemUserBinding
 
-class AdapterUserList(
-    private val userList: ArrayList<DataUsers>,
-    ) : RecyclerView.Adapter<AdapterUserList.ListViewHolder>() {
+class AdapterUserList(private val userList: List<UsersData>)
+    : RecyclerView.Adapter<AdapterUserList.ListViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -23,16 +24,15 @@ class AdapterUserList(
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val name = userList[position].name
-        val loc = userList[position].location
-        val company = userList[position].company
 
-        val city = loc.substring(0, loc.indexOf(','))
-        val description = "$name • $city • $company"
-
-        holder.binding.imgUser.setImageResource(userList[position].avatar)
-        holder.binding.tvUsername.text = userList[position].username
-        holder.binding.tvDesc.text = description
+        holder.binding.apply {
+            tvName.text = userList[position].login.lowercase()
+            tvUsername.text = "id : ${userList[position].id.toString()}"
+            Glide.with(holder.itemView.context)
+                .load(userList[position].avatarUrl)
+                .circleCrop()
+                .into(imgUser)
+        }
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(userList[holder.adapterPosition])
@@ -42,9 +42,8 @@ class AdapterUserList(
 
     override fun getItemCount(): Int = userList.size
 
-
     interface OnItemClickCallback {
-        fun onItemClicked(data: DataUsers)
+        fun onItemClicked(data: UsersData)
     }
 
 }

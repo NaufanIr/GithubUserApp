@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.githubuserapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubUserApp">
         <activity
-            android:name=".UserDetailActivity"
+            android:name=".user_detail_screen.UserDetailActivity"
+            android:parentActivityName=".home_screen.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".home_screen.MainActivity"
             android:exported="false"/>
         <activity
             android:name=".SplashScreen"

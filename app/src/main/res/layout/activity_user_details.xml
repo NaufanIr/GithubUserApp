@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background"
     android:fitsSystemWindows="true"
     tools:context=".user_detail_screen.UserDetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="?attr/background"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -35,11 +36,8 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/TabBar"
                 android:layout_gravity="bottom"
-                android:background="@color/white"
-                app:tabTextColor="@color/indigo_900"
                 tools:background="@color/indigo_700" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -52,5 +50,16 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:contentDescription="@string/fab_like_desc"
+        android:src="@drawable/ic_favorite" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

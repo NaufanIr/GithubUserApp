@@ -7,29 +7,25 @@
     android:paddingBottom="60dp">
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/bg_cover"
-        android:contentDescription="@string/bg_cover"
+        style="@style/CoverImage"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/cover_image" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="150dp"
-        app:civ_border_color="#4D000000"
+        app:civ_border_color="?attr/civ_border_color"
         app:civ_border_width="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/avatarDesc"
-        tools:src="@drawable/user0" />
+        tools:src="@drawable/user" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -62,7 +58,7 @@
     <View
         android:layout_width="1dp"
         android:layout_height="0dp"
-        android:background="@color/indigo_900"
+        android:background="?attr/colorOutline"
         app:layout_constraintTop_toTopOf="@+id/tv_repositories_count"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView1"
@@ -88,7 +84,7 @@
     <View
         android:layout_width="1dp"
         android:layout_height="0dp"
-        android:background="@color/indigo_900"
+        android:background="?attr/colorOutline"
         app:layout_constraintTop_toTopOf="@+id/tv_repositories_count"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -116,7 +112,7 @@
         android:layout_height="1dp"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="10dp"
-        android:background="@color/indigo_900"
+        android:background="?attr/colorOutline"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
@@ -128,7 +124,8 @@
         app:drawableStartCompat="@drawable/ic_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:drawableTint="?attr/colorOutline" />
 
     <TextView
         android:id="@+id/tv_company"
@@ -139,7 +136,8 @@
         app:drawableStartCompat="@drawable/ic_company"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_loc" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_loc"
+        app:drawableTint="?attr/colorOutline" />
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -16,8 +16,16 @@
     <string name="desc_following">Following</string>
     <string name="bg_cover">User Detail Page Background Cover</string>
     <string name="spalsh_screen_logo">GitHub</string>
+    <string name="home_appbar">Github Users</string>
     <string name="author">By Naufan</string>
     <string name="search_title">Search</string>
+    <string name="fab_like_desc">Button For Adding or Remoiving User Into Favorites List</string>
+    <string name="activity_favorite_user_title">Favorite Users</string>
+    <string name="activity_user_details_title">Loading...</string>
+    <string name="home_screen_title">Github Users</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="theme_title">Theme</string>
+    <string name="cover_image">Cover Image User Detail Page</string>
 
 
 </resources>

@@ -39,8 +39,7 @@ class FollowingFragment : Fragment() {
         val layoutManager = LinearLayoutManager(requireContext())
         binding.rvFollowing.layoutManager = layoutManager
 
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
-            .get(FollowingViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[FollowingViewModel::class.java]
 
         getListOfFollowing()
     }
@@ -55,7 +54,7 @@ class FollowingFragment : Fragment() {
 
         viewModel.setData(username)
 
-        viewModel.getData().observe(viewLifecycleOwner, {
+        viewModel.getData().observe(viewLifecycleOwner) {
             if (it != null) {
                 val layoutAdapter = AdapterUserList(it)
                 binding.rvFollowing.adapter = layoutAdapter
@@ -69,7 +68,6 @@ class FollowingFragment : Fragment() {
                     }
                 })
             }
-        })
-
+        }
     }
 }

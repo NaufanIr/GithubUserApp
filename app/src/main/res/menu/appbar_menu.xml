@@ -9,4 +9,19 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always" />
 
+    <item
+        android:id="@+id/item_favorite"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/favorites_title"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/item_theme"
+        android:icon="?attr/icon"
+        android:title="@string/theme_title"
+        app:showAsAction="ifRoom" />
+
 </menu>
+
+
+<!--app:showAsAction="collapseActionView|always"-->

@@ -1,20 +1,25 @@
 package com.example.githubuserapp.home_screen
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.example.githubuserapp.SettingPreferences
 import com.example.githubuserapp.api.ApiConfig
 import com.example.githubuserapp.data.UserSearchResponse
 import com.example.githubuserapp.data.UsersData
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel : ViewModel() {
-    val listUser = MutableLiveData<List<UsersData>>()
+class MainViewModel(private val pref: SettingPreferences) : ViewModel() {
+    private val listUser = MutableLiveData<List<UsersData>>()
+    var isInitUser = true
 
-    fun searchUsers(query: String){
+    fun setIsInitUser(e: Boolean) {
+        isInitUser = e
+    }
+
+    fun searchUsers(query: String) {
         val client = ApiConfig.getApiService().getUserSearch(query)
         client.enqueue(object : Callback<UserSearchResponse>{
 
@@ -36,7 +41,16 @@ class MainViewModel : ViewModel() {
         })
     }
 
-    fun getSearchUsers() : LiveData<List<UsersData>>{
-        return listUser
+    fun getSearchUsers() : LiveData<List<UsersData>> = listUser
+
+    fun saveThemeSetting(isDarkModeActive: Boolean) {
+        viewModelScope.launch {
+            pref.saveThemeSetting(isDarkModeActive)
+        }
     }
+
+    fun getThemeSettings(): LiveData<Boolean> {
+        return pref.getThemSetting().asLiveData()
+    }
+
 }

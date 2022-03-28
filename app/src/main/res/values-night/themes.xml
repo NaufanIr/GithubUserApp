@@ -2,19 +2,39 @@
     <!-- Base application theme. -->
     <style name="Theme.GitHubUserApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/black_800</item>
+        <item name="colorPrimaryVariant">@color/black_light</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/black_light</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+        <item name="background">@color/black_500</item>
+        <item name="colorOutline">@color/white</item>
+        <item name="civ_border_color">@color/white_overlay</item>
+        <item name="icon">@drawable/ic_light_mode</item>
+
     </style>
-    <style name="ThemeOverlay.GitHubUserApp.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
-        <item name="fullscreenTextColor">@color/light_blue_A400</item>
+
+    <!--STYLE UNTUK COVER IMAGE-->
+    <style name="CoverImage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:contentDescription">@string/bg_cover</item>
+        <item name="android:src">@drawable/bg_cover_dark</item>
     </style>
+
+    <!--STYLE UNTUK TAB BAR-->
+    <style name="TabBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/background</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabIndicatorColor">@color/white</item>
+    </style>
+
 </resources>

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background"
-    tools:context=".home_screen.MainActivity">
+    tools:context=".user_fav_screen.UserFavoriteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_users"
+        android:id="@+id/rv_fav_users"
         tools:viewBindingIgnore="true"
         android:layout_width="0dp"
         android:layout_height="0dp"
